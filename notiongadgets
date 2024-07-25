@@ -1,0 +1,27 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Timer&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        h1 { font-size: 3em; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="timer"&gt;&lt;/h1&gt;
+    &lt;script&gt;
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('timer').textContent = currentTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); // initial call to display time immediately
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
